@@ -29,4 +29,4 @@ Vue3 + TS 打造Sword Design 组件库
 
 ## 开始使用
 
-- 访问 [SwordDesign](https://swdwiki.github.io/swd-design/#/) 了解更多信息。
+- 访问 [SwordDesign](https://swdwiki.github.io/sword-design/#/) 了解更多信息。
