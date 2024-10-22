@@ -1,0 +1,79 @@
+.swd-message {
+  --swd-message-bg-color: var(--swd-color-info-light-9);
+  --swd-message-border-color: var(--swd-border-color-lighter);
+  --swd-message-padding: 15px 19px;
+  --swd-message-close-size: 16px;
+  --swd-message-close-icon-color: var(--swd-text-color-placeholder);
+  --swd-message-close-hover-color: var(--swd-text-color-secondary);
+  --swd-message-icon-size: 16px;
+  --swd-message-icon-margin: 8px;
+}
+
+.swd-message {
+  width: fit-content;
+  max-width: calc(100% - 32px);
+  box-sizing: border-box;
+  border-radius: var(--swd-border-radius-base);
+  border-width: var(--swd-border-width);
+  border-style: var(--swd-border-style);
+  border-color: var(--swd-message-border-color);
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  background-color: var(--swd-message-bg-color);
+  padding: var(--swd-message-padding);
+  display: flex;
+  align-items: center;
+  transition: top var(--swd-transition-duration), opacity var(--swd-transition-duration),
+    transform var(--swd-transition-duration);
+  .swd-message__icon {
+    color: var(--swd-message-text-color);
+    font-size: var(--swd-message-icon-size);
+    width: var(--swd-message-icon-size);
+    margin-right: var(--swd-message-icon-margin);
+  }
+  .swd-message__content {
+    color: var(--swd-message-text-color);
+    overflow-wrap: break-word;
+  }
+  &.is-close .swd-message__content {
+    padding-right: 10px;
+  }
+  &.text-center {
+    justify-content: center;
+  }
+  .swd-message__close {
+    display: flex;
+    align-items: center;
+  }
+  .swd-message__close .swd-icon {
+    cursor: pointer;
+  }
+}
+
+@each $val in info, success, warning, danger {
+  .swd-message--$(val) {
+    --swd-message-bg-color: var(--swd-color-$(val)-light-9);
+    --swd-message-border-color: var(--swd-color-$(val)-light-8);
+    --swd-message-text-color: var(--swd-color-$(val));
+    .swd-message__close {
+      --swd-icon-color: var(--swd-color-$(val));
+    }
+  }
+}
+
+.swd-message--error {
+  --swd-message-bg-color: var(--swd-color-danger-light-9);
+  --swd-message-border-color: var(--swd-color-danger-light-8);
+  --swd-message-text-color: var(--swd-color-danger);
+  .swd-message__close {
+    --swd-icon-color: var(--swd-color-danger);
+  }
+}
+
+.swd-message.fade-up-enter-from,
+.swd-message.fade-up-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}

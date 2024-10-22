@@ -1,0 +1,20 @@
+{
+  "name": "@swd-design/docs",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.md",
+  "scripts": {
+    "dev": "vitepress dev ./",
+    "build": "vitepress build ./"
+  },
+  "devDependencies": {
+    "@vitepress-demo-preview/component": "^2.3.2",
+    "@vitepress-demo-preview/plugin": "^1.2.3",
+    "vitepress": "1.4.1"
+  },
+  "dependencies": {
+    "markdown-it-todo": "^1.0.5",
+    "vitepress-markdown-timeline": "^1.2.1"
+  }
+}

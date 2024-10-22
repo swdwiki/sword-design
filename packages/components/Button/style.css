@@ -1,0 +1,200 @@
+.swd-button-group {
+  --swd-button-group-border-color: var(--swd-border-color-lighter);
+}
+.swd-button {
+  --swd-button-font-weight: var(--swd-font-weight-primary);
+  --swd-button-border-color: var(--swd-border-color);
+  --swd-button-bg-color: var(--swd-fill-color-blank);
+  --swd-button-text-color: var(--swd-text-color-regular);
+  --swd-button-disabled-text-color: var(--swd-disabled-text-color);
+  --swd-button-disabled-bg-color: var(--swd-fill-color-blank);
+  --swd-button-disabled-border-color: var(--swd-border-color-light);
+  --swd-button-hover-text-color: var(--swd-color-primary);
+  --swd-button-hover-bg-color: var(--swd-color-primary-light-9);
+  --swd-button-hover-border-color: var(--swd-color-primary-light-7);
+  --swd-button-active-text-color: var(--swd-button-hover-text-color);
+  --swd-button-active-border-color: var(--swd-color-primary);
+  --swd-button-active-bg-color: var(--swd-button-hover-bg-color);
+  --swd-button-outline-color: var(--swd-color-primary-light-5);
+  --swd-button-active-color: var(--swd-text-color-primary);
+}
+
+.swd-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: 32px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--swd-button-text-color);
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: 0.1s;
+  font-weight: var(--swd-button-font-weight);
+  user-select: none;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  background-color: var(--swd-button-bg-color);
+  border: var(--swd-border);
+  border-color: var(--swd-button-border-color);
+  padding: 8px 15px;
+  font-size: var(--swd-font-size-base);
+  border-radius: var(--swd-border-radius-base);
+  & + & {
+    margin-left: 12px;
+  }
+  &:hover,
+  &:focus {
+    color: var(--swd-button-hover-text-color);
+    border-color: var(--swd-button-hover-border-color);
+    background-color: var(--swd-button-hover-bg-color);
+    outline: none;
+  }
+  &:active {
+    color: var(--swd-button-active-text-color);
+    border-color: var(--swd-button-active-border-color);
+    background-color: var(--swd-button-active-bg-color);
+    outline: none;
+  }
+  /*plain*/
+  &.is-plain {
+    --swd-button-hover-text-color: var(--swd-color-primary);
+    --swd-button-hover-bg-color: var(--swd-fill-color-blank);
+    --swd-button-hover-border-color: var(--swd-color-primary);
+  }
+  /*round*/
+  &.is-round {
+    border-radius: var(--swd-border-radius-round);
+  }
+  /*circle*/
+  &.is-circle {
+    border-radius: 50%;
+    padding: 8px;
+  }
+  /*disabled*/
+  &.is-loading,
+  &.is-disabled,
+  &.is-disabled:hover,
+  &.is-disabled:focus,
+  &[disabled],
+  &[disabled]:hover,
+  &[disabled]:focus {
+    color: var(--swd-button-disabled-text-color);
+    cursor: not-allowed;
+    background-image: none;
+    background-color: var(--swd-button-disabled-bg-color);
+    border-color: var(--swd-button-disabled-border-color);
+  }
+  [class*='swd-icon'] {
+    width: 1em;
+    height: 1em;
+  }
+}
+@each $val in primary, success, warning, info, danger {
+  .swd-button--$(val) {
+    --swd-button-text-color: var(--swd-color-white);
+    --swd-button-bg-color: var(--swd-color-$(val));
+    --swd-button-border-color: var(--swd-color-$(val));
+    --swd-button-outline-color: var(--swd-color-$(val)-light-5);
+    --swd-button-active-color: var(--swd-color-$(val)-dark-2);
+    --swd-button-hover-text-color: var(--swd-color-white);
+    --swd-button-hover-bg-color: var(--swd-color-$(val)-light-3);
+    --swd-button-hover-border-color: var(--swd-color-$(val)-light-3);
+    --swd-button-active-bg-color: var(--swd-color-$(val)-dark-2);
+    --swd-button-active-border-color: var(--swd-color-$(val)-dark-2);
+    --swd-button-disabled-text-color: var(--swd-color-white);
+    --swd-button-disabled-bg-color: var(--swd-color-$(val)-light-5);
+    --swd-button-disabled-border-color: var(--swd-color-$(val)-light-5);
+  }
+  .swd-button--$(val).is-plain {
+    --swd-button-text-color: var(--swd-color-$(val));
+    --swd-button-bg-color: var(--swd-color-$(val)-light-9);
+    --swd-button-border-color: var(--swd-color-$(val)-light-5);
+    --swd-button-hover-text-color: var(--swd-color-white);
+    --swd-button-hover-bg-color: var(--swd-color-$(val));
+    --swd-button-hover-border-color: var(--swd-color-$(val));
+    --swd-button-active-text-color: var(--swd-color-white);
+
+    --swd-button-disabled-text-color: var(--swd-color-$(val)-light-5);
+    --swd-button-disabled-bg-color: var(--swd-color-$(val)-light-9);
+    --swd-button-disabled-border-color: var(--swd-color-$(val)-light-8);
+  }
+}
+
+.swd-button--large {
+  --swd-button-size: 40px;
+  height: var(--swd-button-size);
+  padding: 12px 19px;
+  font-size: var(--swd-font-size-base);
+  border-radius: var(--swd-border-radius-base);
+  /*circle*/
+  &.is-circle {
+    border-radius: 50%;
+    padding: 12px;
+  }
+}
+.swd-button--small {
+  --swd-button-size: 24px;
+  height: var(--swd-button-size);
+  padding: 5px 11px;
+  font-size: 12px;
+  border-radius: calc(var(--swd-border-radius-base) - 1px);
+  /*circle*/
+  &.is-circle {
+    border-radius: 50%;
+    padding: 5px;
+  }
+  [class*='swd-icon'] {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.swd-button-group {
+  display: inline-block;
+  vertical-align: middle;
+
+  &::after {
+    clear: both;
+  }
+  & > :deep(.swd-button){
+    float: left;
+    position: relative;
+    margin-left: 0;
+    &:first-child{
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right-color: var(--swd-button-group-border-color);
+    }
+    &:last-child{
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0; 
+      border-left-color: var(--swd-button-group-border-color);
+    }
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+
+      border-left-color: var(--swd-button-group-border-color);
+      border-right-color: var(--swd-button-group-border-color);
+    }
+    &:not(:last-child) {
+      margin-right: -1px;
+    }
+    &:first-child:last-child {
+      border-top-right-radius: var(--swd-border-radius-base);
+      border-bottom-right-radius: var(--swd-border-radius-base);
+      border-top-left-radius: var(--swd-border-radius-base);
+      border-bottom-left-radius: var(--swd-border-radius-base);
+
+      &.is-round {
+        border-radius: var(--swd-border-radius-round);
+      }
+
+      &.is-circle {
+        border-radius: 50%;
+      }
+    }
+  }
+}

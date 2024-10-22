@@ -1,0 +1,16 @@
+.swd-icon {
+  --swd-icon-color: inherit;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  fill: currentColor;
+  color: var(--swd-icon-color);
+  font-size: inherit;
+}
+
+@each $val in primary, info, success, warning, danger {
+  .swd-icon--$(val) {
+    --swd-icon-color: var(--swd-color-$(val));
+  }
+}

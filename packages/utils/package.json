@@ -1,0 +1,8 @@
+{
+  "name": "@swd-design/utils",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "test": "vitest --coverage"
+  }
+}
