@@ -73,7 +73,7 @@ export default defineConfig({
 
     },
     socialLinks: [
-      { icon: "github", link: "https://github.com/swdwiki/swd-design" },
+      { icon: "github", link: "https://github.com/swdwiki/sword-design" },
     ],
   },
   markdown: {

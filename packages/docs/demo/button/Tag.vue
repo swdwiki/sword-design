@@ -4,7 +4,7 @@
   <swd-button
     type="primary"
     tag="a"
-    href="https://github.com/swdwiki/swd-design"
+    href="https://github.com/swdwiki/sword-design"
     target="_blank"
     rel="noopener noreferrer"
   >

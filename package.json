@@ -69,10 +69,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/swdwiki/swd-design-vue.git"
+    "url": "git+https://github.com/swdwiki/sword-design.git"
   },
   "bugs": {
-    "url": "https://github.com/swdwiki/swd-design-vue/issues"
+    "url": "https://github.com/swdwiki/sword-design/issues"
   },
-  "homepage": "https://github.com/swdwiki/swd-design-vue#readme"
+  "homepage": "https://github.com/swdwiki/sword-design#readme"
 }
