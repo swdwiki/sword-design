@@ -12,7 +12,7 @@ export default defineConfig({
   lang: 'zh-CN',
   description: "前端组件库",
   appearance: false,
-  base: "/swd-design/",
+  base: "/sword-design/",
   themeConfig: {
     nav: [
       { text: "开始使用", link: "/guide/get-started",activeMatch: '/guide/' },
