@@ -1,0 +1,1 @@
+import{a1 as e,b as a,o as t}from"./chunks/framework.D3U-UGgB.js";const _=JSON.parse('{"title":"","description":"","frontmatter":{"search":false},"headers":[],"relativePath":"guide/plan.md","filePath":"guide/plan.md"}'),n={name:"guide/plan.md"};function r(s,o,c,p,d,i){return t(),a("div")}const f=e(n,[["render",r]]);export{_ as __pageData,f as default};
